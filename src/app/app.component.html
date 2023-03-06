@@ -1,0 +1,40 @@
+
+  <div class="container">
+              <h1>Angular custome Directives!</h1>
+    <div class="personal">
+      <h2><span class="AB">AB</span> Gym Registration</h2>
+      <form class="Fm">
+        <label for="fname">Full Name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">phone:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+        <label for="fname">Email:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Duaration:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+       
+      </form>
+      <div class="row">
+        <div class="col">
+          <button class="App" (click)="submit(true)">Submit</button>
+          <button class="Rej"(click)="submit(false)">Cancel</button>
+        </div>
+      </div>
+    <div *ngIf="isSubmitted; then Submited else Notsubmited"></div>
+    <ng-template #Submited>
+      <div><p [ngClass]="{
+        green: isSubmitted === true
+      }">Registration Sucessfully!</p></div>
+    </ng-template>
+    <ng-template #Notsubmited>
+      <div><p [ngClass]="{
+        red: isSubmitted === false
+      }">Registration Cancelled!</p></div>
+    </ng-template>
+   
+        
+  
+    </div>
+   
+    </div>
+  
